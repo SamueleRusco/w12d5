@@ -1,12 +1,12 @@
 package src;
-// inserisco SOLO parametri e metodi relativi all'immagine, cosa vuole immagine di
+// inserisco SOLO parametri e metodi relativi all'Immagine, cosa vuole Immagine di
 // diverso dalle altre classi?
 //luminosità
-public class immagine extends Multimedia{
+public class Immagine extends Multimedia{
   int luminosita;
 
 
-    public immagine(String t, int lum){
+    public Immagine(String t, int lum){
         //super sostituisce this.
         super(t);
         this.luminosita = lum;
@@ -22,7 +22,7 @@ public class immagine extends Multimedia{
  };
 
  void show(){
-     System.out.println("titolo immagine: "+ this.titolo);
+     System.out.println("titolo Immagine: "+ this.getTitolo());
      //system.out del titolo
      //ciclo for che mi stampa tanti asterischi quanto è il numero della luminosita
      System.out.print("luminosità: ");
@@ -32,6 +32,10 @@ public class immagine extends Multimedia{
 System.out.println(" ");
 
  };
+
+ public void play(){
+     System.out.println("questa Immagine non è riproducibiel");
+ }
 
 
 

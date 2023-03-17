@@ -1,6 +1,9 @@
 package src;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
 // qua nel main chiederò di inserire il titolo, inserisco la logica principale
 public class Runnable {
     static Scanner scanner = new Scanner(System.in);
@@ -13,11 +16,11 @@ public class Runnable {
         aud1.show();*/
 
            /* System.out.println("che tipo di file vuoi creare?");
-            System.out.println("immagine/video/audio");
+            System.out.println("Immagine/video/audio");
 
             switch () {
-                case immagine:
-                    created = "'immagine";
+                case Immagine:
+                    created = "'Immagine";
                     break;
                 case video:
                     created = " video";
@@ -42,51 +45,72 @@ public class Runnable {
     //play(scanner.value???)
 
     private static void creaElemento() {
-        System.out.println("che tipo di file vuoi creare?\nimmagine/video/audio");
-        int scelta = scanner.nextInt();
-        scanner.nextLine();
 
+        List<Multimedia> arrayDiCose = new ArrayList<>();
+       arrayDiCose.add(new Immagine("asd", 4) );
+        arrayDiCose.add(new Audio("asdAudio", 2, 3) );
+        arrayDiCose.add(new Video("asdVideo", 2,3, 2) );
+        /*while (arrayDiCose.size() != 2) {
+            System.out.println("che tipo di file vuoi creare?\nImmagine/video/audio");
+            int scelta = scanner.nextInt();
+            scanner.nextLine();
 
-        switch (scelta) {
-            case 1:
-                System.out.println("inserisci nome immagine");
-                String nomeImmagine = scanner.nextLine();
-                System.out.println("inserisci luminosità");
-                int lumImg = scanner.nextInt();
-                scanner.nextLine();
-                immagine img = new immagine(nomeImmagine, lumImg);
+            switch (scelta) {
+                case 1:
+                    System.out.println("inserisci nome Immagine");
+                    String nomeImmagine = scanner.nextLine();
+                    System.out.println("inserisci luminosità");
+                    int lumImg = scanner.nextInt();
+                    scanner.nextLine();
+                    arrayDiCose.add(new Immagine(nomeImmagine, lumImg));
 
-                break;
-            case 2:
-                System.out.println("inserisci noem video");
-                String nomeVideo = scanner.nextLine();
+                    break;
+                case 2:
+                    System.out.println("inserisci noem video");
+                    String nomeVideo = scanner.nextLine();
+                    System.out.println("inserisci durata");
+                    int durataVideo = scanner.nextInt();
+                    scanner.nextLine();
 
-                System.out.println("inserisci luminosità");
-                int lumVid = scanner.nextInt();
-                scanner.nextLine();
+                    System.out.println("inserisci luminosità");
+                    int lumVid = scanner.nextInt();
+                    scanner.nextLine();
 
-                System.out.println("inserisci Volume");
-                int volVideo = scanner.nextInt();
-                scanner.nextLine();
+                    System.out.println("inserisci Volume");
+                    int volVideo = scanner.nextInt();
+                    scanner.nextLine();
 
-                video vid = new video(nomeVideo, lumVid, volVideo);
-                break;
-            case 3:
-                System.out.println("inserisci nome audio");
-                String nomeAudio = scanner.nextLine();
-                System.out.println("inserisci Volume");
-                int volAudio = scanner.nextInt();
-                scanner.nextLine();
-                audio aud = new audio(nomeAudio, volAudio);
+                    arrayDiCose.add(new video(nomeVideo, lumVid, volVideo, durataVideo));
+                    break;
+                case 3:
+                    System.out.println("inserisci nome audio");
+                    String nomeAudio = scanner.nextLine();
+                    System.out.println("inserisci Durata");
+                    int durataAudio = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("inserisci Volume");
+                    int volAudio = scanner.nextInt();
+                    scanner.nextLine();
+                    arrayDiCose.add(new audio(nomeAudio, volAudio, durataAudio));
 
-                break;
-            default:
-                System.out.println("inserisci un tipo valido");
-                creaElemento();
+                    break;
+                default:
+                    System.out.println("inserisci un tipo valido");
+                    creaElemento();
 
-        }
+            }
 
+        }*/
+        System.out.println("l'array è pieno");
+        System.out.println("quale file vuoi riprodurre? (1 a 5)");
+arrayDiCose.forEach(m -> {
+
+    m.play();
+
+});
 
     }
+
+
 
 }

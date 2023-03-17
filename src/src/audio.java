@@ -1,11 +1,14 @@
 package src;
 
-public class audio extends Multimedia {
+public class Audio extends Multimedia {
 int volume;
 
-    public audio(String t, int vol) {
+int durata;
+
+    public Audio(String t, int vol, int dur) {
         super(t);
         this.volume = vol;
+        this.durata = dur;
     }
 
 
@@ -19,7 +22,7 @@ int volume;
     };
     void show() {
 
-        System.out.println("titolo audio: "+ this.titolo);
+        System.out.println("titolo Audio: "+ this.getTitolo());
         //system.out del titolo
         //ciclo for che mi stampa tanti asterischi quanto è il numero della luminosita
 
@@ -32,6 +35,17 @@ int volume;
 
 
     }
+    public void play(){
+        System.out.println("inizio riproduzione dell'audio: " + this.getTitolo());
+
+        for(int i = 0; i < this.durata; i++){
+            System.out.print("!");
+
+        };
+        System.out.println("");
+
+    };
+
 
 
 }

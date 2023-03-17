@@ -1,11 +1,19 @@
 package src;
 
-public class video extends Multimedia{
+import java.sql.SQLOutput;
+
+public class Video extends Multimedia{
 
     int luminosita;
     int volume;
+    int durata;
 
-
+    public Video(String t, int lum, int volume, int durataVideo){
+        super(t);
+        this.luminosita = lum;
+        this.volume = volume;
+        this.durata = durataVideo;
+    }
 
     void alzaLuminosita(int n){
         this.luminosita = this.luminosita + n;
@@ -24,14 +32,10 @@ public class video extends Multimedia{
         this.volume = this.volume - n;
     };
 
-    public video(String t, int lum, int volume){
-        super(t);
-        this.luminosita = lum;
-        this.volume = volume;
-    }
 
-    void show() {
-        System.out.println("titolo video: "+ this.titolo);
+
+   public void show() {
+        System.out.println("titolo video: "+ this.getTitolo());
         //system.out del titolo
         //ciclo for che mi stampa tanti asterischi quanto è il numero della luminosita
         System.out.print("luminosità: ");
@@ -47,5 +51,15 @@ public class video extends Multimedia{
 
 
     }
+    public void play(){
+        System.out.println("inizio riproduzione del video: " + this.getTitolo());
+
+       for(int i = 0; i < this.durata; i++){
+            System.out.print("!");
+
+       };
+        System.out.println("");
+
+    };
 
 }
