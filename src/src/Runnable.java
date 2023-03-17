@@ -47,10 +47,10 @@ public class Runnable {
     private static void creaElemento() {
 
         List<Multimedia> arrayDiCose = new ArrayList<>();
-       arrayDiCose.add(new Immagine("asd", 4) );
+      /* arrayDiCose.add(new Immagine("asd", 4) );
         arrayDiCose.add(new Audio("asdAudio", 2, 3) );
-        arrayDiCose.add(new Video("asdVideo", 2,3, 2) );
-        /*while (arrayDiCose.size() != 2) {
+        arrayDiCose.add(new Video("asdVideo", 2,3, 2) );*/
+        while (arrayDiCose.size() != 2) {
             System.out.println("che tipo di file vuoi creare?\nImmagine/video/audio");
             int scelta = scanner.nextInt();
             scanner.nextLine();
@@ -80,7 +80,7 @@ public class Runnable {
                     int volVideo = scanner.nextInt();
                     scanner.nextLine();
 
-                    arrayDiCose.add(new video(nomeVideo, lumVid, volVideo, durataVideo));
+                    arrayDiCose.add(new Video(nomeVideo, lumVid, volVideo, durataVideo));
                     break;
                 case 3:
                     System.out.println("inserisci nome audio");
@@ -91,7 +91,7 @@ public class Runnable {
                     System.out.println("inserisci Volume");
                     int volAudio = scanner.nextInt();
                     scanner.nextLine();
-                    arrayDiCose.add(new audio(nomeAudio, volAudio, durataAudio));
+                    arrayDiCose.add(new Audio(nomeAudio, volAudio, durataAudio));
 
                     break;
                 default:
@@ -100,13 +100,11 @@ public class Runnable {
 
             }
 
-        }*/
+        }
         System.out.println("l'array è pieno");
         System.out.println("quale file vuoi riprodurre? (1 a 5)");
 arrayDiCose.forEach(m -> {
-
     m.play();
-
 });
 
     }
